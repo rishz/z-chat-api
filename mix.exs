@@ -20,7 +20,8 @@ defmodule Zchat.Mixfile do
   def application do
     [
       mod: {Zchat, []},
-      extra_applications: [:logger]
+      applications: [:phoenix, :cowboy, :logger, :gettext,
+                      :phoenix_ecto, :postgrex, :comeonin]
     ]
   end
 
@@ -36,6 +37,9 @@ defmodule Zchat.Mixfile do
       {:phoenix, "~> 1.3.0-rc"},
       {:phoenix_pubsub, "~> 1.0"},
       {:cors_plug, "~> 1.2"},
+      {:guardian, "~> 1.0-beta"},
+      {:comeonin, "~> 4.0"},
+      {:argon2_elixir, "~> 1.2"},
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
