@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46831586-344c-42e9-a7bc-c8e3cf81b625" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/prod.exs" afterPath="$PROJECT_DIR$/config/prod.exs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elixir_buildpack.config" afterPath="$PROJECT_DIR$/elixir_buildpack.config" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,21 +30,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prod.exs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="prod.exs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/prod.exs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+            <state relative-caret-position="870">
+              <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="elixir_buildpack.config" pinned="false" current-in-tab="false">
+      <file leaf-file-name="elixir_buildpack.config" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elixir_buildpack.config">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="60">
+              <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/web/router.ex" />
         <option value="$PROJECT_DIR$/deps/plug/mix.exs" />
         <option value="$PROJECT_DIR$/mix.exs" />
-        <option value="$PROJECT_DIR$/elixir_buildpack.config" />
         <option value="$PROJECT_DIR$/config/prod.exs" />
+        <option value="$PROJECT_DIR$/elixir_buildpack.config" />
       </list>
     </option>
   </component>
@@ -307,12 +307,12 @@
       <option name="presentableId" value="Default" />
       <updated>1509476976981</updated>
       <workItem from="1509476978422" duration="43000" />
-      <workItem from="1509477092959" duration="3620000" />
+      <workItem from="1509477092959" duration="3745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3663000" />
+    <option name="totallyTimeSpent" value="3788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
@@ -403,14 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elixir_buildpack.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/prod.secret.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -421,8 +413,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/prod.exs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+        <state relative-caret-position="870">
+          <caret line="58" column="26" lean-forward="true" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elixir_buildpack.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
           <folding />
         </state>
       </provider>
