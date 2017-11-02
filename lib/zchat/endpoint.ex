@@ -36,5 +36,6 @@ defmodule Zchat.Endpoint do
     key: "_zchat_key",
     signing_salt: "kqpeoIdZ"
 
+  plug CORSPlug
   plug Zchat.Router
 end
