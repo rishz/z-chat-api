@@ -39,7 +39,7 @@ defmodule Zchat.Mixfile do
       {:cors_plug, "~> 1.2"},
       {:guardian, "~> 1.0-beta"},
       {:comeonin, "~> 4.0"},
-      {:argon2_elixir, "~> 1.2"},
+      {:bcrypt_elixir, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
