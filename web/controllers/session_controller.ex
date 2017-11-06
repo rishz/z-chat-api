@@ -1,9 +1,14 @@
 defmodule Zchat.SessionController do
   use Zchat.Web, :controller
 
-  def index(conn, _params) do
-    # Return some static JSON for now
-    conn
-    |> json(%{status: "Ok"})
+  def create(conn, %{"grant_type" => "password",
+    "username" => username,
+    "password" => password}) do
+
   end
+
+  def create(conn, %{"grant_type" => _}) do
+    throw "Unsupported grant_type"
+  end
+
 end
