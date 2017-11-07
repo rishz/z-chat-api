@@ -19,20 +19,19 @@ defmodule Zchat.SessionController do
       user = User
       |> where(email: ^username)
       |> Repo.one!
-
       cond do
+
         checkpw(password, user.password_hash) ->
 
           # Successful login
           Logger.info "User " <> username <> " just logged in"
 
           # Encode a JWT
-          { :ok, jwt, _} = Guardian.encode_and_sign(user, :access)
+          { :ok, jwt, _} = Guardian.encode_and_sign(user, :token)
 
           Logger.info "Token generated1 "
 
           conn
-          # Return token to the client
           |> json(%{access_token: jwt})
 
           Logger.info "Token generated2 "
