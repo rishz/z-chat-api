@@ -37,6 +37,7 @@ defmodule Zchat.Mixfile do
       {:phoenix, "~> 1.3.0-rc"},
       {:phoenix_pubsub, "~> 1.0"},
       {:cors_plug, "~> 1.2"},
+      {:ja_serializer, "~> 0.12.0"},
       {:guardian, "~> 1.0-beta"},
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},

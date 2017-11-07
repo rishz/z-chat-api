@@ -7,7 +7,11 @@ defmodule Zchat.Router do
 
   scope "/api", Zchat do
     pipe_through :api
+
+    # Registration
     post "register", RegistrationController, :create
+
+    # Login
     post "token", SessionController, :create, as: :login
   end
 
