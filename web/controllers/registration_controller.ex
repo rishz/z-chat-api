@@ -7,11 +7,11 @@ defmodule Zchat.RegistrationController do
         conn,
         %{
           "data" => %{
-            "type" => "user",
+            "type" => "users",
             "attributes" => %{
               "email" => email,
               "password" => password,
-              "password_confirmation" => password_confirmation
+              "password-confirmation" => password_confirmation
             }
           }
         }
