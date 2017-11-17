@@ -23,7 +23,7 @@ defmodule Zchat.Router do
     post "token", SessionController, :create, as: :login
   end
 
-  scope "/api", Peepchat do
+  scope "/api", Zchat do
 
     pipe_through :api_auth
     get "/user/current", UserController, :current
