@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46831586-344c-42e9-a7bc-c8e3cf81b625" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/registration_controller_test.exs" afterPath="$PROJECT_DIR$/test/controllers/registration_controller_test.exs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/user_test.exs" afterPath="$PROJECT_DIR$/test/models/user_test.exs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/views/error_view_test.exs" afterPath="$PROJECT_DIR$/test/views/error_view_test.exs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models/user.ex" afterPath="$PROJECT_DIR$/web/models/user.ex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/error_view.ex" afterPath="$PROJECT_DIR$/web/views/error_view.ex" />
-    </list>
+    <list default="true" id="46831586-344c-42e9-a7bc-c8e3cf81b625" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -34,11 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration_controller_test.exs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registration_controller_test.exs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/controllers/registration_controller_test.exs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="room.ex" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/models/room.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -391,12 +395,12 @@
       <workItem from="1509476978422" duration="43000" />
       <workItem from="1509477092959" duration="12609000" />
       <workItem from="1510039341808" duration="7764000" />
-      <workItem from="1510920009440" duration="3658000" />
+      <workItem from="1510920009440" duration="3661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24074000" />
+    <option name="totallyTimeSpent" value="24077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
@@ -801,6 +805,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models/room.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
