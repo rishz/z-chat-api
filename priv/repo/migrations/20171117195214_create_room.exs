@@ -10,5 +10,8 @@ defmodule Zchat.Repo.Migrations.CreateRoom do
     end
 
     create index(:rooms, [:owner_id])
+    
+    # Unique room names across the whole app
+    create index(:rooms, [:owner_id], unique: true)
   end
 end
