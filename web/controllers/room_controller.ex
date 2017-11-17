@@ -1,15 +1,32 @@
 defmodule Zchat.RoomController do
   use Zchat.Web, :controller
 
+#  This will ensure that only authenticated users will be able to invoke the methods in this controller.
+  plug Guardian.Plug.EnsureAuthenticated, handler: Zchat.AuthErrorHandler
   alias Zchat.Room
 
-  def index(conn, _params) do
-    rooms = Repo.all(Room)
-    render(conn, "index.json", rooms: rooms)
+  # List of rooms by owner
+  def index(conn, %{"user_id" => user_id}) do
+    rooms = Room
+            |> where(owner_id: ^user_id)
+            |> Repo.all
+
+    render(conn, "index.json", data: rooms)
   end
 
-  def create(conn, %{"room" => room_params}) do
-    changeset = Room.changeset(%Room{}, room_params)
+  # Full list of rooms
+  def index(conn, _params) do
+    rooms = Repo.all(Room)
+    render(conn, "index.json", data: rooms)
+  end
+
+  def create(conn, %{"data" => %{"type" => "rooms", "attributes" => room_params, "relationships" => _}}) do
+
+    # Get the current user
+    current_user = Guardian.Plug.current_resource(conn)
+
+    # Build the current user's ID into the changeset
+    changeset = Room.changeset(%Room{owner_id: current_user.id}, room_params)
 
     case Repo.insert(changeset) do
       {:ok, room} ->
@@ -29,8 +46,14 @@ defmodule Zchat.RoomController do
     render(conn, "show.json", room: room)
   end
 
-  def update(conn, %{"id" => id, "room" => room_params}) do
-    room = Repo.get!(Room, id)
+  def update(conn, %{"id" => id, "data" => %{"id" => _, "type" => "rooms", "attributes" => room_params}}) do
+
+    current_user = Guardian.Plug.current_resource(conn)
+
+    room = Room  # We're looking for a room
+           |> where(owner_id: ^current_user.id, id: ^id)
+           |> Repo.one! # We want exactly one result
+
     changeset = Room.changeset(room, room_params)
 
     case Repo.update(changeset) do
@@ -44,7 +67,12 @@ defmodule Zchat.RoomController do
   end
 
   def delete(conn, %{"id" => id}) do
-    room = Repo.get!(Room, id)
+
+    current_user = Guardian.Plug.current_resource(conn)
+
+    room = Room  # We're looking for a room
+           |> where(owner_id: ^current_user.id, id: ^id) # Where the owner_id is 1 and the id is 1
+           |> Repo.one! # We want exactly one result, otherwise barf
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
