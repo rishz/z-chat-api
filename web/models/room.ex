@@ -3,7 +3,7 @@ defmodule Zchat.Room do
 
   schema "rooms" do
     field :name, :string
-    belongs_to :owner, Zchat.Owner, foreign_key: :owner_id
+    belongs_to :owner, Zchat.Owner
 
     timestamps()
   end
@@ -19,6 +19,7 @@ defmodule Zchat.Room do
 
     |> cast(params, @required_fields, @optional_fields)
     |> validate_length(:name, min: 4)
+    |> unique_constraint(:name)
 
   end
 end
