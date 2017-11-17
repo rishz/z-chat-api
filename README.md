@@ -1,4 +1,5 @@
-# Zchat
+# z-chat-api [![Build Status](https://travis-ci.org/rishz/z-chat-api.svg?branch=master)](https://travis-ci.org/rishz/z-chat-api)
+
 
 To start your Phoenix app:
 
