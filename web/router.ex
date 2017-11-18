@@ -19,10 +19,10 @@ defmodule Zchat.Router do
     pipe_through :api
 
     # Registration
-    post "register", RegistrationController, :create
+    post "/register", RegistrationController, :create
 
     # Login
-    post "token", SessionController, :create, as: :login
+    post "/token", SessionController, :create, as: :login
   end
 
   scope "/api", Zchat do
@@ -31,11 +31,11 @@ defmodule Zchat.Router do
 
     get "/user/current", UserController, :current, as: :current_user
 
-    resources "user", UserController, only: [:show, :index] do
-      get "rooms", RoomController, :index, as: :rooms
+    resources "/user", UserController, only: [:show, :index] do
+      get "/rooms", RoomController, :index, as: :rooms
     end
 
-    resources "rooms", RoomController, except: [:new, :edit]
+    resources "/rooms", RoomController, except: [:new, :edit]
 
 end
 

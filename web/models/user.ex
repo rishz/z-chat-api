@@ -12,8 +12,8 @@ defmodule Zchat.User do
     timestamps()
   end
 
-  @required_fields ~w(email password password_confirmation)
-  @optional_fields ~w()
+  @allowed_fields ~w(email password password_confirmation)a
+  @required_fields @allowed_fields
 
   @doc """
   Builds a changeset based on the `model` and `params`.
@@ -21,9 +21,10 @@ defmodule Zchat.User do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
-  def changeset(model, params \\ :empty) do
+  def changeset(model, params \\ %{}) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @required_fields)
+    |> validate_required(@required_fields)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 8)
     |> validate_confirmation(:password)

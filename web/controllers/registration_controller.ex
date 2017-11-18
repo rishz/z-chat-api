@@ -27,7 +27,7 @@ defmodule Zchat.RegistrationController do
 
         conn
         |> put_status(:created)
-        |> render(Zchat.UserView, "show.json", user: user)
+        |> render(Zchat.UserView, "show.json-api", data: user)
 
       {:error, changeset} ->
 
