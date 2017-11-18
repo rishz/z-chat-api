@@ -21,7 +21,7 @@ defmodule Zchat.RoomController do
     render(conn, "index.json-api", data: rooms)
   end
 
-  def create(conn, %{"data" => %{"type" => "rooms", "attributes" => room_params, "relationships" => _}}) do
+  def create(conn, %{"data" => %{"type" => "rooms", "attributes" => room_params}}) do
 
     # Get the current user
     current_user = Guardian.Plug.current_resource(conn)
