@@ -74,13 +74,13 @@ defmodule Zchat.RoomControllerTest do
   end
 
   test "creates and renders resource when data is valid", %{conn: conn, user: _user} do
-    conn = post conn, room_path(conn, :create), data: %{type: "rooms", attributes: @valid_attrs, relationships: %{}}
+    conn = post conn, room_path(conn, :create), data: %{type: "rooms", attributes: @valid_attrs}
     assert json_response(conn, 201)["data"]["id"]
     assert Repo.get_by(Room, @valid_attrs)
   end
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn, user: _user} do
-    conn = post conn, room_path(conn, :create), data: %{type: "rooms", attributes: @invalid_attrs, relationships: %{}}
+    conn = post conn, room_path(conn, :create), data: %{type: "rooms", attributes: @invalid_attrs}
     assert json_response(conn, 422)["errors"] != %{}
   end
 
@@ -93,7 +93,7 @@ defmodule Zchat.RoomControllerTest do
 
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn, user: user} do
     room = Repo.insert! %Room{owner_id: user.id}
-    conn = post conn, room_path(conn, :create), data: %{type: "rooms", attributes: @invalid_attrs, relationships: %{}}
+    conn = post conn, room_path(conn, :create), data: %{type: "rooms", attributes: @invalid_attrs}
     assert json_response(conn, 422)["errors"] != %{}
   end
 
