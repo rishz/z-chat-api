@@ -39,7 +39,9 @@ config :guardian, Guardian,
   secret_key: System.get_env("GUARDIAN_SECRET") || "W1cNPiQGuymqa6RNoT7olC9q1/hZKlIO6StNdkHr7JxmQE7UdlN++TsIUI4JHtIS",
   serializer: Zchat.GuardianSerializer
 
-
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json-api"]
+}
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

@@ -1,9 +1,10 @@
 defmodule Zchat.RoomController do
   use Zchat.Web, :controller
+  import Ecto.Query
 
-#  This will ensure that only authenticated users will be able to invoke the methods in this controller.
-  plug Guardian.Plug.EnsureAuthenticated, handler: Zchat.AuthErrorHandler
   alias Zchat.Room
+  #  This will ensure that only authenticated users will be able to invoke the methods in this controller.
+  plug Guardian.Plug.EnsureAuthenticated, handler: Zchat.AuthErrorHandler
 
   # List of rooms by owner
   def index(conn, %{"user_id" => user_id}) do
@@ -43,7 +44,7 @@ defmodule Zchat.RoomController do
 
   def show(conn, %{"id" => id}) do
     room = Repo.get!(Room, id)
-    render(conn, "show.json", room: room)
+    render(conn, "show.json", data: room)
   end
 
   def update(conn, %{"id" => id, "data" => %{"id" => _, "type" => "rooms", "attributes" => room_params}}) do
@@ -58,7 +59,7 @@ defmodule Zchat.RoomController do
 
     case Repo.update(changeset) do
       {:ok, room} ->
-        render(conn, "show.json", room: room)
+        render(conn, "show.json", data: room)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)

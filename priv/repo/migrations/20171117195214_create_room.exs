@@ -15,3 +15,4 @@ defmodule Zchat.Repo.Migrations.CreateRoom do
     create index(:rooms, [:name], unique: true)
   end
 end
+u

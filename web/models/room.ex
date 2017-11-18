@@ -5,7 +5,7 @@ defmodule Zchat.Room do
     field :name, :string
     belongs_to :owner, Zchat.Owner
 
-    timestamps()
+    timestamps
   end
 
   @required_fields ~w(name)
@@ -14,8 +14,8 @@ defmodule Zchat.Room do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
-    struct
+  def changeset(model, params \\ :empty) do
+    model
 
     |> cast(params, @required_fields, @optional_fields)
     |> validate_length(:name, min: 4)
