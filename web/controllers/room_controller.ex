@@ -35,6 +35,7 @@ defmodule Zchat.RoomController do
         |> put_status(:created)
         |> put_resp_header("location", room_path(conn, :show, room))
         |> render("show.json-api", data: room)
+
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
