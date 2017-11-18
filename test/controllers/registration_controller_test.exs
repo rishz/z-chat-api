@@ -4,9 +4,9 @@ defmodule Zchat.RegistrationControllerTest do
   alias Zchat.User
 
   @valid_attrs %{
-    email: "rishabh@example.com",
-    password: "qwertyuiop",
-    password_confirmation: "qwertyuiop"
+    "email" => "rishabh@example.com",
+    "password" => "qwertyuiop",
+    "password-confirmation" => "qwertyuiop"
   }
   @invalid_attrs %{}
 
@@ -14,18 +14,17 @@ defmodule Zchat.RegistrationControllerTest do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
   end
 
-
   test "creates and renders resource when data is valid", %{conn: conn} do
-    conn = post conn, registration_path(conn, :create), %{data: %{type: "user",
+    conn = post conn, registration_path(conn, :create), %{data: %{type: "users",
       attributes: @valid_attrs
     }}
     assert json_response(conn, 201)["data"]["id"]
-    assert Repo.get_by(User, %{email: @valid_attrs[:email]})
+    assert Repo.get_by(User, %{email: @valid_attrs["email"]})
   end
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
     assert_error_sent 400, fn ->
-      conn = post conn, registration_path(conn, :create),  %{data: %{type: "user",
+      post conn, registration_path(conn, :create),  %{data: %{type: "user",
         attributes: @invalid_attrs
       }}
     end
